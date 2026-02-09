@@ -8,14 +8,14 @@ pipeline {
                 checkout scm
 
                 // בונה ומריץ את Compose
-                sh 'docker-compose up --build --abort-on-container-exit'
+                bat 'docker-compose up --build --abort-on-container-exit'
             }
         }
 
         stage('Cleanup') {
             steps {
                 // סוגר ומנקה קונטיינרים ורשתות
-                sh 'docker-compose down'
+                bat 'docker-compose down'
             }
         }
     }
