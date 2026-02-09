@@ -7,6 +7,7 @@ pipeline {
                 // מביא את הקוד מה-repo
                 checkout scm
 
+                bat 'docker compose down --remove-orphans'
                 // בונה ומריץ את Compose
                 bat 'docker-compose up --build --abort-on-container-exit'
             }
