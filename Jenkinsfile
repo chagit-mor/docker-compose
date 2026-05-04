@@ -9,6 +9,7 @@ pipeline {
 
                 bat 'docker compose down --remove-orphans'
                 // בונה ומריץ את Compose
+                //אם קונטיינר אחד נעצר/מסיים — כל שאר הקונטיינרים ייעצרו.
                 bat 'docker-compose up --build --abort-on-container-exit'
             }
         }
